@@ -1,6 +1,7 @@
 """ Script para inserir voos no banco de dados a partir de um arquivo CSV. """
 import csv
 import os
+import unidecode
 from flask import current_app
 from app.repositories import Voos
 from app.extensions import db
@@ -24,17 +25,27 @@ class InserirVoosCsv():
                 next(file)
                 reader = csv.DictReader(file, delimiter=";")
 
-                for row in reader:
-                    mercado = row["AEROPORTO_DE_ORIGEM_SIGLA"] + row["AEROPORTO_DE_DESTINO_SIGLA"]
+                reader.fieldnames = [unidecode.unidecode(col).upper() for col in reader.fieldnames]
 
-                    if row["RPK"] == '':
-                        row["RPK"] = 0
+                colunas_necessarias = [
+                    "ANO", "MES", "AEROPORTO_DE_ORIGEM_SIGLA", "AEROPORTO_DE_DESTINO_SIGLA","RPK"
+                    ]
+
+                for row in reader:
+                    dados_filtrados = {
+                        chave: row[chave] for chave in colunas_necessarias if chave in row
+                        }
+
+                    mercado = dados_filtrados["AEROPORTO_DE_ORIGEM_SIGLA"] + dados_filtrados["AEROPORTO_DE_DESTINO_SIGLA"] # pylint: disable=C0301
+
+                    if dados_filtrados["RPK"] == '':
+                        dados_filtrados["RPK"] = 0
 
                     novo_voo = Voos(
-                        ano=row["ANO"],
-                        mes=row["MÊS"],
+                        ano=dados_filtrados["ANO"],
+                        mes=dados_filtrados["MES"],
                         mercado=mercado,
-                        rpk=row["RPK"]
+                        rpk=dados_filtrados["RPK"]
                     )
                     db.session.add(novo_voo)
 
