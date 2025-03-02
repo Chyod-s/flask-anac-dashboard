@@ -2,6 +2,7 @@
 from flask import Flask
 from app.controllers import register_routes
 from app.extensions import Config, db, migrate
+from app.services import InserirVoosCsv
 
 
 def create_app():
@@ -14,9 +15,9 @@ def create_app():
     migrate.init_app(app, db)
 
 
-
     with app.app_context():
         from app.repositories import Usuarios, Voos # pylint: disable=C0415,W0611
+        InserirVoosCsv.inserir()
 
     register_routes(app)
 
