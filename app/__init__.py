@@ -1,8 +1,9 @@
+""" Módulo de inicialização da aplicação Flask """
 from flask import Flask
-from config import Config
-from .extensions import db, migrate
+from app.extensions import Config, db, migrate
 
 def create_app():
+    """ Cria a aplicação Flask """
     app = Flask(__name__)
 
     app.config.from_object(Config)
@@ -11,9 +12,9 @@ def create_app():
     migrate.init_app(app, db)
 
     with app.app_context():
-        from . import models
+        from app.repositories import Usuarios, Voos
 
-    from .routes import register_routes
+    from app.controllers import register_routes
     register_routes(app)
 
     return app

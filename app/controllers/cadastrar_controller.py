@@ -1,15 +1,12 @@
-from flask import jsonify, request, render_template, redirect
-from .models import Usuarios
-from .extensions import db
+""" Módulo com as rotas da aplicação. """
+from flask import request, render_template, redirect
+from app.repositories import Usuarios
+from app.extensions import db
 
-def register_routes(app):
-
-    @app.route('/', methods=['GET'])
-    def home():
-        return render_template('home.html')
-
+def cadastrar_controller(app):
+    """ Registra as rotas da aplicação. """
     @app.route('/cadastrar', methods=['GET', 'POST'])
-    def login():
+    def cadastrar():
         if request.method == 'GET':
             return render_template('cadastrar.html')
         elif request.method == 'POST':
