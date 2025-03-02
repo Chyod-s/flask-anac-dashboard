@@ -17,8 +17,9 @@ class InserirVoosCsv():
     def filtro_voos(reader):
         """ Filtra os voos de acordo com os parâmetros passados. """
         voos_filtrados = []
+
         for linha in reader:
-            if linha['EMPRESA'] != 'GLO':
+            if linha['EMPRESA_SIGLA'] != 'GLO':
                 continue
 
             if linha['GRUPO_DE_VOO'] != 'REGULAR':
