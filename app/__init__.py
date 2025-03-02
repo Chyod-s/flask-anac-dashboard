@@ -1,5 +1,6 @@
 """ Módulo de inicialização da aplicação Flask """
 from flask import Flask
+from app.controllers import register_routes
 from app.extensions import Config, db, migrate
 
 def create_app():
@@ -12,9 +13,8 @@ def create_app():
     migrate.init_app(app, db)
 
     with app.app_context():
-        from app.repositories import Usuarios, Voos
+        from app.repositories import Usuarios, Voos # pylint: disable=C0415,W0611
 
-    from app.controllers import register_routes
     register_routes(app)
 
     return app
