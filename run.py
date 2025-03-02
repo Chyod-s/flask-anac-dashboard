@@ -1,11 +1,8 @@
-from flask import Flask
+from app import create_app
 from os import environ
-from app.routes import register_routes
 
 def main():
-    app = Flask(__name__, template_folder="app/templates")
-
-    register_routes(app)
+    app = create_app()
 
     SERVER_HOST = environ.get('SERVER_HOST', 'localhost')
     app.run(host=SERVER_HOST, port=5500, debug=True)

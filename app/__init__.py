@@ -1,10 +1,6 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 from config import Config
-
-db = SQLAlchemy()
-migrate = Migrate()
+from .extensions import db, migrate
 
 def create_app():
     app = Flask(__name__)
@@ -14,6 +10,10 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
 
-    from .models import Voos, Login
+    with app.app_context():
+        from . import models
+
+    from .routes import register_routes
+    register_routes(app)
 
     return app
