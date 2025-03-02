@@ -18,7 +18,6 @@ class InserirVoosCsv():
         """ Lê o CSV e insere os dados no banco de dados. """
         with current_app.app_context():
             if Voos.query.first():
-                print("Os dados já foram inseridos anteriormente.")
                 return
 
             with open(InserirVoosCsv.csv_path, 'r', encoding='utf-8') as file:
@@ -26,11 +25,16 @@ class InserirVoosCsv():
                 reader = csv.DictReader(file, delimiter=";")
 
                 for row in reader:
+                    mercado = row["AEROPORTO_DE_ORIGEM_SIGLA"] + row["AEROPORTO_DE_DESTINO_SIGLA"]
+
+                    if row["RPK"] == '':
+                        row["RPK"] = 0
+
                     novo_voo = Voos(
                         ano=row["ANO"],
                         mes=row["MÊS"],
-                        mercado=row["EMPRESA_SIGLA"],
-                        rpk=123
+                        mercado=mercado,
+                        rpk=row["RPK"]
                     )
                     db.session.add(novo_voo)
 
