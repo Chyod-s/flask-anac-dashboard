@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/home/styles.css">
+    <link rel="stylesheet" href="../static/cadastrar/styles.css">
+    <link rel="stylesheet" href="../static/style.css">
     <title>Document</title>
 </head>
 <body>
     <form id= "cadastroForm" action="" method="post">
-        Nome: <input type="text" name="nomeForm" id=""><br>
-        Senha: <input type="password" name="senhaForm" id=""><br>
-        <input type="submit" value="Login">
+        <fieldset id="usuario">
+            Nome: <input type="text" name="nome"><br>
+            Senha: <input type="password" name="senha"><br>
+            E-mail: <input type="text" name="e-mail"><br>
+        </fieldset>
+
+        <input id="submit" type="submit" value="Cadastrar">
     </form>
 </body>
 <script src="../static/cadastrar/script.js"></script>
