@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import jsonify, request, render_template
 
 def register_routes(app):
 
@@ -6,4 +6,8 @@ def register_routes(app):
     def initial_route():
         return jsonify({'message': 'Hello World!'})
 
-    
+    @app.route('/login', methods=['GET', 'POST'])
+    def login():
+        if request.method == 'GET':
+            return render_template('login.html')
+           

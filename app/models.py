@@ -10,3 +10,12 @@ class Voos(db.Model):
 
     def __repr__(self):
         return f'<Voo {self.mercado} - {self.ano}/{self.mes}>'
+
+class Login(db.Model):
+    __tablename__ = 'login'
+    id = db.Column(db.Integer, primary_key=True)
+    nome = db.Column(db.String(50))
+    senha = db.Column(db.Integer)
+
+    def __repr__(self):
+        return f'<Login {self.nome}>'

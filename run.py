@@ -3,7 +3,7 @@ from os import environ
 from app.routes import register_routes
 
 def main():
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder="app/templates")
 
     register_routes(app)
 
