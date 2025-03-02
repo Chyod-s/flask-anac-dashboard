@@ -11,6 +11,7 @@ def cadastrar_controller(app):
     def cadastrar():
         if request.method == 'GET':
             return render_template('cadastrar.html')
+
         elif request.method == 'POST':
             nome = request.form['nome']
             senha = request.form['senha']
@@ -21,6 +22,5 @@ def cadastrar_controller(app):
             db.session.commit()
 
             login_user(novo_usuario)
-
 
             return redirect(url_for('home'))

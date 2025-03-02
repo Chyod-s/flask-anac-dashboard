@@ -7,6 +7,7 @@ from app.extensions import Config, db, migrate
 def create_app():
     """ Cria a aplicação Flask """
     app = Flask(__name__)
+    app.secret_key = '(v!z.MhM?Ci`!pHL?.'
 
     app.config.from_object(Config)
 
