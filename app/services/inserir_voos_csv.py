@@ -6,13 +6,29 @@ from flask import current_app
 from app.repositories import Voos
 from app.extensions import db
 
-
 class InserirVoosCsv():
     """ Insere voos no banco de dados a partir de um arquivo CSV. """
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
     csv_path = os.path.normpath(os.path.join(
         BASE_DIR, "..", "..", "data", "Dados_Estatisticos.csv"))
+
+    @staticmethod
+    def filtro_voos(reader):
+        """ Filtra os voos de acordo com os parâmetros passados. """
+        voos_filtrados = []
+        for linha in reader:
+            if linha['EMPRESA'] != 'GLO':
+                continue
+
+            if linha['GRUPO_DE_VOO'] != 'REGULAR':
+                continue
+
+            if linha['NATUREZA'] != 'DOMÉSTICA':
+                continue
+
+            voos_filtrados.append(linha)
+        return voos_filtrados
 
     @staticmethod
     def inserir():
@@ -27,11 +43,13 @@ class InserirVoosCsv():
 
                 reader.fieldnames = [unidecode.unidecode(col).upper() for col in reader.fieldnames]
 
+                voos_filtrados = InserirVoosCsv.filtro_voos(reader)
+
                 colunas_necessarias = [
                     "ANO", "MES", "AEROPORTO_DE_ORIGEM_SIGLA", "AEROPORTO_DE_DESTINO_SIGLA","RPK"
                     ]
 
-                for row in reader:
+                for row in voos_filtrados:
                     dados_filtrados = {
                         chave: row[chave] for chave in colunas_necessarias if chave in row
                         }
