@@ -1,7 +1,9 @@
 """ Módulo com as rotas da aplicação. """
-from flask import request, render_template, redirect
+from flask import request, render_template, redirect, url_for
+from flask_login import login_user
 from app.repositories import Usuarios
 from app.extensions import db
+
 
 def cadastrar_controller(app):
     """ Registra as rotas da aplicação. """
@@ -18,4 +20,7 @@ def cadastrar_controller(app):
             db.session.add(novo_usuario)
             db.session.commit()
 
-            return redirect('/')
+            login_user(novo_usuario)
+
+
+            return redirect(url_for('home'))

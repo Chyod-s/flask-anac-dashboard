@@ -1,8 +1,9 @@
 """ Módulo de modelos de usuários """
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
 from app.extensions import db
 
-class Usuarios(db.Model):
+class Usuarios(UserMixin, db.Model):
     """ Modelo de dados para a tabela de usuários """
     __tablename__ = 'usuarios'
     id = db.Column(db.Integer, primary_key=True)
@@ -26,3 +27,4 @@ class Usuarios(db.Model):
 
     def __repr__(self):
         return f'<Login {self.nome} - {self.email}>'
+    

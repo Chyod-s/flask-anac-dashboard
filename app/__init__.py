@@ -3,6 +3,7 @@ from flask import Flask
 from app.controllers import register_routes
 from app.extensions import Config, db, migrate
 
+
 def create_app():
     """ Cria a aplicação Flask """
     app = Flask(__name__)
@@ -11,6 +12,8 @@ def create_app():
 
     db.init_app(app)
     migrate.init_app(app, db)
+
+
 
     with app.app_context():
         from app.repositories import Usuarios, Voos # pylint: disable=C0415,W0611
