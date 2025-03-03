@@ -11,7 +11,6 @@ class Usuarios(UserMixin, db.Model):
     senha = db.Column(db.String(256), nullable=False)
     email = db.Column(db.String(100), nullable=False)
 
-
     def __init__(self, nome, senha, email):
         self.nome = nome
         self.set_senha(senha)
@@ -27,4 +26,3 @@ class Usuarios(UserMixin, db.Model):
 
     def __repr__(self):
         return f'<Login {self.nome} - {self.email}>'
-    
