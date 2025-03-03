@@ -3,11 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style src="static/home/style.css"></style>
+    <link rel="stylesheet" href="../static/style.css">
     <title>Document</title>
 </head>
 <body>
-    <h3>Hello World!!</h3>
+    <header> 
+        <div class="logo">
+            
+        </div>
+        <div class="menu">
+
+        </div>
+    </header>
+    <body>
+        <div class="profile-menu">
+            <h3>Hello, {{current_user.nome}}!</h3>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <h2>Olá, {{current_user.nome}}!</h2>
+                <p>Seja bem-vindo ao nosso site!</p>
+            </div>
+
+        </div> 
+    </body>
+    <footer> 
+      
+    </footer>
+    
 </body>
-<script src="static/home/script.js"></script>
+<script src="../static/home/scripts.js"></script>
 </html>

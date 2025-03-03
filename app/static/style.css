@@ -1,16 +1,52 @@
 @charset  "UTF-8";
-@font-face {
-    font-family: 'fonteLogo';
-    src: url("../_fonts/bubblegum-sans-regular.otf");
-}
 
-body {
-    background-color: #dddddd;
+html, body {
+    margin: 0; 
+    padding: 0; 
+    width: 100%;
     color: rgb(0, 0, 0);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Arial, Helvetica, sans-serif';
 }
 
 p {
     text-align: justify;
     text-indent: 50px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; 
+    width: 100vw; 
+    z-index: 5;
+    background: rgb(194, 6, 6);
+}
+
+.logo {
+    background-color: #f9f9f9;
+    border-bottom: .0714285714rem solid #dddddd;
+    padding-top: .2857142857rem;
+    padding-bottom: .2857142857rem;
+    height: 1.5rem;
+}
+
+.menu {
+    background-color: #ffff;
+    border-bottom: .0714285714rem solid #dddddd;
+    padding-top: .2857142857rem;
+    padding-bottom: .2857142857rem;
+    height: 5.7rem;
+}
+
+body {
+    margin-top: 10rem;
+}
+
+footer {
+    margin-top: 50rem; 
+    width: 100%; 
+    background: rgb(43, 43, 43);
+    height: 5.7rem;
+    z-index: 10; 
 }
