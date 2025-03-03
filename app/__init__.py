@@ -1,13 +1,16 @@
 """ Módulo de inicialização da aplicação Flask """
+import os
 from flask import Flask
 from app.comandos import register_commands
 from app.controllers import register_routes
 from app.extensions import Config, db, migrate
 
+KEY = os.getenv('SECRET_KEY')
+
 def create_app():
     """ Cria a aplicação Flask """
     app = Flask(__name__)
-    app.secret_key = '(v!z.MhM?Ci`!pHL?.'
+    app.secret_key = KEY
 
     app.config.from_object(Config)
 
