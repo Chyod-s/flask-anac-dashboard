@@ -1,4 +1,5 @@
 """ Módulo de rotas da aplicação. """
+from .analise_controller import analise_controller
 from .logout_controller import logout_controller
 from .login_controller import login_controller
 from .user_loader import user_loader
@@ -12,3 +13,4 @@ def register_routes(app):
     user_loader(app)
     login_controller(app)
     logout_controller(app)
+    analise_controller(app)

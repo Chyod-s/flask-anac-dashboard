@@ -23,7 +23,7 @@
             <div class="menu_direito">
                 <ul>
                     <li><a id="home" href="{{ url_for('home') }}">Home</a></li>
-                    <li><a id="analise" href="{{ url_for('login') }}">Análises</a></li>
+                    <li><a id="analise" href="#" onclick="trocarSrcAnalise()">Análises</a></li>
                     <li><a id="cadastrar" href="#" onclick="trocarSrcCadastrar()">Cadastrar</a></li>
                     {% if current_user.is_authenticated %}
                     <li><a href="{{ url_for('logout') }}">Sair</a></li>
