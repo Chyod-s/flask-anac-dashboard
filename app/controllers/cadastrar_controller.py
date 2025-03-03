@@ -17,6 +17,9 @@ def cadastrar_controller(app):
             senha = request.form['senha']
             email = request.form['email']
 
+            if nome == '' or senha == '' or email == '':
+                return render_template('cadastrar.html', erro='Preencha todos os campos.')
+
             novo_usuario = Usuarios(nome=nome, senha=senha, email=email)
             db.session.add(novo_usuario)
             db.session.commit()

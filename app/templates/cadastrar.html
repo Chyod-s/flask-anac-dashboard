@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="profile-menu">
+    </div>
+    
     <form id= "cadastroForm" action="" method="post">
         <fieldset id="usuario">
             Nome: <input type="text" name="nome"><br>
@@ -15,8 +18,17 @@
             E-mail: <input type="text" name="email"><br>
         </fieldset>
 
-        <input id="submit" type="submit" value="Cadastrar">
+        <div id="buttons">
+            <a class="submit-btn" href="{{url_for('login')}}">Voltar</a>
+            <input class="submit-btn" type="submit" value="Cadastrar">
+        </div>
     </form>
 </body>
-<script src="../static/login_cadastrar/script.js"></script>
+
+{% if erro %}
+<script> 
+    alert('{{ erro }}');
+</script>
+{% endif %}
+
 </html>

@@ -59,7 +59,7 @@ fieldset {
 }
 
 .submit-btn {
-    background-color: #4CAF50;
+    background-color: #FF7020;
     color: white;
     padding: 8px 16px;
     border: none;
@@ -72,5 +72,5 @@ fieldset {
 }
 
 .submit-btn:hover {
-    background-color: #45a049;
+    background-color: #2B2B2B;
 }
