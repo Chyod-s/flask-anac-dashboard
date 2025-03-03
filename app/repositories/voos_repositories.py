@@ -10,5 +10,15 @@ class Voos(db.Model):
     mercado = db.Column(db.String(50))
     rpk = db.Column(db.Float)
 
+    def to_dict(self):
+        """Converte a instância de Voos em um dicionário serializável."""
+        return {
+            'id': self.id,
+            'ano': self.ano,
+            'mes': self.mes,
+            'mercado': self.mercado,
+            'rpk': self.rpk
+        }
+
     def __repr__(self):
         return f'<{self.mercado};{self.rpk};{self.ano};{self.mes}>'

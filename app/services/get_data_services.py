@@ -4,11 +4,13 @@ from app.extensions import db
 
 class GetData():
     """ Classe responsável por obter dados da base de dados. """
-    def __init__(self):
-        pass
 
-    def get_data(self):
+    @staticmethod
+    def get_data():
         """ Obtém dados da base de dados. """
         dados = db.session.query(Voos).all()
 
-        return dados
+        serialized_data = [dado.to_dict() for dado in dados]
+
+        return serialized_data
+
