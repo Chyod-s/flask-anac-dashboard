@@ -11,4 +11,4 @@ class Voos(db.Model):
     rpk = db.Column(db.Float)
 
     def __repr__(self):
-        return f'<Voo {self.mercado} - {self.ano}/{self.mes}>'
+        return f'<{self.mercado};{self.rpk};{self.ano};{self.mes}>'

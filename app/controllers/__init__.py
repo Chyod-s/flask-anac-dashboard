@@ -1,4 +1,5 @@
 """ Módulo de rotas da aplicação. """
+from .get_data_bd import get_data_bd
 from .analise_controller import analise_controller
 from .logout_controller import logout_controller
 from .login_controller import login_controller
@@ -14,3 +15,4 @@ def register_routes(app):
     login_controller(app)
     logout_controller(app)
     analise_controller(app)
+    get_data_bd(app)
