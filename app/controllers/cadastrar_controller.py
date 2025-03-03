@@ -4,7 +4,6 @@ from flask_login import login_user
 from app.repositories import Usuarios
 from app.extensions import db
 
-
 def cadastrar_controller(app):
     """ Registra as rotas da aplicação. """
     @app.route('/cadastrar', methods=['GET', 'POST'])
