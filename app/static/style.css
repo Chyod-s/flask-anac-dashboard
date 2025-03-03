@@ -5,7 +5,7 @@
         padding: 0; 
         width: 100%;
         color: rgb(0, 0, 0);
-        font-family: 'Gol-Regular', 'Helvetica', 'sans-serif';
+        font-family: 'GOLSansText', 'Helvetica', 'sans-serif';
     }
 
     p {
@@ -124,4 +124,8 @@
     .submit-btn {
         text-decoration: none; 
         color: black; 
+    }
+    
+    .riscado {
+        text-decoration: line-through;
     }

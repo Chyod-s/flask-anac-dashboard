@@ -26,4 +26,4 @@ def cadastrar_controller(app):
 
             login_user(novo_usuario)
 
-            return redirect(url_for('home'))
+            return redirect(url_for('cadastrar'))

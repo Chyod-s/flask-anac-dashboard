@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/style.css">
     <title>Document</title>
+    
 </head>
 <body>
     <header> 
@@ -12,23 +13,30 @@
             {% if current_user.is_authenticated %}
             <p>👋 Olá, {{current_user.nome}}! Acompanhe aqui as análises detalhadas da ANAC sobre o setor aéreo. ✈️📊</p>
             {% else %}
-            <p>👋 Oops! Você não está logado. Faça login para acessar as análises da ANAC! 😊</p> -->
+            <p>👋 Oops! Você não está logado. Faça login para acessar as análises da ANAC! 😊</p>
             {% endif %}
         </div>
         <div class="menu">
-            <div class="menu_esquerdo"></div>
+            <div class="menu_esquerdo">
+                <input type="hidden" id="isloged" value="{{ current_user.is_authenticated | tojson }}">
+            </div>
             <div class="menu_direito">
                 <ul>
                     <li><a id="home" href="{{ url_for('home') }}">Home</a></li>
                     <li><a id="analise" href="{{ url_for('login') }}">Análises</a></li>
+                    <li><a id="cadastrar" href="#" onclick="trocarSrcCadastrar()">Cadastrar</a></li>
+                    {% if current_user.is_authenticated %}
                     <li><a href="{{ url_for('logout') }}">Sair</a></li>
+                    {% else %}
+                    <li><a href="#" class="riscado">Sair</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </header>
     <body>
         <div class="container">
-            <iframe class="content" src="{{ url_for('login') }}" frameborder="0"></iframe>
+            <iframe id="iframe" class="content" src="{{ url_for('login') }}" frameborder="0"></iframe>
         </div>
     </body>
     <footer> 
@@ -37,5 +45,8 @@
     </footer>
     
 </body>
+<script>
+
+</script>
 <script src="../static/home/scripts.js"></script>
 </html>

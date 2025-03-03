@@ -69,8 +69,12 @@ fieldset {
     text-align: center;
     margin-left: 40px;
     margin-right: 40px;
+    font-size: 0.875rem;
+    font-stretch: narrower;
+    font-weight: bold;
 }
 
 .submit-btn:hover {
     background-color: #2B2B2B;
 }
+

@@ -14,6 +14,9 @@ def login_controller(app):
             nome = request.form['nome']
             senha = request.form['senha']
 
+            if nome == "" or senha == "":
+                return render_template('login.html', erro="Usuário ou senha incorretos")
+
             user = db.session.query(Usuarios).filter_by(nome=nome).first()
             if user and user.verificar_senha(senha):
                 print("Login bem-sucedido!")
@@ -21,4 +24,4 @@ def login_controller(app):
                 return "Usuário ou senha incorretos"
 
             login_user(user)
-            return redirect(url_for('home'))
+            return redirect(url_for('login'))
