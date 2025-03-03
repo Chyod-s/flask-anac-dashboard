@@ -1,9 +1,15 @@
 @charset 'UTF-8';
 
+html, body {
+    margin: 0; 
+    padding: 0; 
+    width: 100%;
+}
+
 form {
+    padding-top: 35px;
     width: 500px;
     margin: auto;
-    
 }
 
 input, textarea, select {
@@ -32,23 +38,39 @@ input#submit {
     text-align: center;
 }
 
-input#submit:hover {
-    background-color: #45a049;
-}
-
-legend {
-    color: #888888;
-    font-weight: bold;
-    font-size: 13pt;
-    font-family: sans-serif;
-}
-
 fieldset {
     border: 1px solid #cecece;
     margin: 20px;
     padding: 10px;
 }
 
-fieldset#usuario {
-    background: url(../static/imagens/icone-contato.png) no-repeat 95% 95%;
+.profile-menu {
+    margin-top: -150px;
+    background-color: #f9f9f9;
+    border-top: .0714285714rem solid #dddddd;
+    border-bottom: .0714285714rem solid #dddddd;
+    height: 4.5rem;
+}
+
+#buttons {
+    display: flex; 
+    justify-content: space-between; 
+    gap: 25px; 
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    width: 35%; 
+    display: inline-block;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
 }

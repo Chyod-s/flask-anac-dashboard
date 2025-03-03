@@ -8,14 +8,22 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="profile-menu">
+        <!-- <h3>Hello, {{current_user.nome}}!</h3> -->
+    </div>
+
     <form id= "login" action="" method="post">
         <fieldset id="usuario">
             Nome: <input type="text" name="nome"><br>
             Senha: <input type="password" name="senha"><br>
         </fieldset>
 
-        <input id="submit" type="submit" value="Login">
+        <div id="buttons">
+            <input class="submit-btn" type="submit" value="Login">
+            <a class="submit-btn" href="{{url_for('cadastrar')}}">Cadastrar</a>
+        </div>
     </form>
+
 </body>
 <script src="../static/login_cadastrar/script.js"></script>
 </html>
