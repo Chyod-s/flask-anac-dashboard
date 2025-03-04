@@ -24,7 +24,7 @@
                 <ul>
                     <li><a id="home" href="{{ url_for('home') }}">Home</a></li>
                     <li><a id="analise" href="#" onclick="trocarSrcAnalise()">Análises</a></li>
-                    <li><a id="cadastrar" href="#" onclick="trocarSrcCadastrar()">Cadastrar</a></li>
+                    <li><a id="login" href="#" onclick="trocarSrcLogin()">Login</a></li>
                     {% if current_user.is_authenticated %}
                     <li><a href="{{ url_for('logout') }}">Sair</a></li>
                     {% else %}
@@ -36,7 +36,7 @@
     </header>
     <body>
         <div class="container">
-            <iframe id="iframe" class="content" src="{{ url_for('login') }}" frameborder="0"></iframe>
+            <iframe id="iframe" class="content" src="{{ url_for('info') }}" frameborder="0"></iframe>
         </div>
     </body>
     <footer> 

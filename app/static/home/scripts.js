@@ -1,7 +1,7 @@
 
-function trocarSrcCadastrar() {
+function trocarSrcLogin() {
     var iframe = document.getElementById("iframe");
-    iframe.src = "/cadastrar"; 
+    iframe.src = "/login"; 
 }
 
 function trocarSrcAnalise() {
