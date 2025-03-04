@@ -1,3 +1,2 @@
 
-data/Dados_Estatisticos.csv
-.venv
+__pycache__

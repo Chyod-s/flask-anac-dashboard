@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/login_cadastrar/styles.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="profile-menu">
+    </div>
+
+    <form id= "login" action="" method="post">
+        <fieldset id="usuario">
+            <input class="input-text" placeholder="Nome:" type="text" name="nome"><br>
+            <input class="input-text" placeholder="Senha:" type="password" name="senha"><br>
+        </fieldset>
+
+        <div id="buttons">
+            <input class="submit-btn" type="submit" value="LOGIN">
+            <a class="submit-btn" href="{{url_for('cadastrar')}}">CADASTRAR</a>
+        </div>
+    </form>
+
+</body>
+<script src="../static/login_cadastrar/scripts.js"></script>
+</html>

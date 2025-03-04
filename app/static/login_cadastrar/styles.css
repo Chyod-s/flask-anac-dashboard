@@ -1,0 +1,84 @@
+@charset 'UTF-8';
+
+html, body {
+    margin: 0; 
+    padding: 0; 
+    width: 100%;
+}
+
+form {
+    padding-top: 35px;
+    width: 500px;
+    margin: auto;
+}
+
+input, textarea, select {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 13pt;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 90%;
+}
+
+input.input-text {
+    margin-top: 10px;
+}
+
+input:hover, textarea:hover {
+    background-color: #dddddd;
+}
+
+input#submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 8px;
+    border: none;
+    cursor: pointer;
+    width: 92%; 
+    display: block; 
+    margin: 10px auto; 
+    text-align: center;
+}
+
+fieldset {
+    border: 1px solid #cecece;
+    margin: 20px;
+    padding: 10px;
+}
+
+.profile-menu {
+    margin-top: -150px;
+    background-color: #f9f9f9;
+    border-top: .0714285714rem solid #dddddd;
+    border-bottom: .0714285714rem solid #dddddd;
+    height: 4.5rem;
+}
+
+#buttons {
+    display: flex; 
+    justify-content: space-between; 
+    gap: 25px; 
+}
+
+.submit-btn {
+    background-color: #FF7020;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    width: 35%; 
+    display: inline-block;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 0.875rem;
+    font-stretch: narrower;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background-color: #2B2B2B;
+}
+

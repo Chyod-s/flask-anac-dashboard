@@ -1,0 +1,138 @@
+    @charset  "UTF-8";
+
+    html, body {
+        margin: 0; 
+        padding: 0; 
+        width: 100%;
+        color: rgb(0, 0, 0);
+        font-family: 'GOLSansText', 'Helvetica', 'sans-serif';
+    }
+
+    p {
+        text-align: justify;
+        text-indent: 50px;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0; 
+        width: 100vw; 
+        z-index: 5;
+        background: rgb(194, 6, 6);
+    }
+
+    .logo {
+        background-color: #f9f9f9;
+        border-bottom: .0714285714rem solid #dddddd;
+        padding-top: .2857142857rem;
+        padding-bottom: .2857142857rem;
+        height: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .logo p {
+        margin: 0; 
+    }
+
+    .menu {
+        margin-top: 0rem;
+        background-color: #ffff;
+        border-bottom: .0714285714rem solid #dddddd;
+        padding-top: .2857142857rem;
+        padding-bottom: .2857142857rem;
+        height: 5.7rem;
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding-left: 20px; 
+        padding-right: 20px; 
+    }
+
+    .menu > .menu_esquerdo {
+        flex: 1; 
+        background-color: #f1f1f1; 
+    }
+    
+    .menu > .menu_direito {
+        display: flex; 
+        align-items: center; 
+    }
+
+    body {
+        margin-top: 8.45rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    ul li {
+        display: inline-block;
+        margin-right: 20px;
+        padding: 10px;
+    }
+
+    ul li:hover {
+        border-bottom: #FF5E00 2px solid;
+    }
+    
+    ul li a {
+        text-decoration: none; 
+        color: black; 
+    }
+
+
+    ul li a:hover {
+        color: #007bff; 
+    }
+
+    footer {
+        background-color: rgb(43, 43, 43);
+        color: white; 
+        text-align: center; 
+        padding: 1rem; 
+        position: relative;
+        width: 97.6%; 
+        height: 4rem;
+        padding-top: 1.4rem;
+    }
+
+    footer p {
+        margin-top: 25rem;
+        padding-top: .1rem; 
+        font-size: 0.7rem;
+        margin: 0; 
+    }
+
+    .logo p {
+        margin-top: 1px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr; 
+        height: 100vh; 
+        width: 98.7vw; 
+    }
+    
+    .content {
+        
+        /* padding: 20px; */
+        width: 100%;
+        height: 100%;
+    }
+    
+    .submit-btn {
+        text-decoration: none; 
+        color: black; 
+    }
+    
+    .riscado {
+        text-decoration: line-through;
+    }
