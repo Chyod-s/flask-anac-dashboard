@@ -22,6 +22,10 @@ input, textarea, select {
     width: 90%;
 }
 
+input.input-text {
+    margin-top: 10px;
+}
+
 input:hover, textarea:hover {
     background-color: #dddddd;
 }
