@@ -25,4 +25,8 @@ def cadastrar_controller(app):
 
             login_user(novo_usuario)
 
-            return redirect(url_for('cadastrar'))
+            return """
+                <script>
+                    window.parent.location.reload(); 
+                </script>
+                """
