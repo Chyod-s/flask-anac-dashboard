@@ -15,40 +15,13 @@ A aplicação permite visualizar informações de voos regulares da companhia a�
 
 ---
 
-## 🏗️ Arquitetura do Projeto
-
-A aplicação segue uma arquitetura **em camadas**, separando responsabilidades:
-
-```
-📂 anac-flight-dashboard/
-├── app/
-│   ├── __init__.py       # Inicializa o Flask
-│   ├── models.py         # Modelos SQLAlchemy (Banco de Dados)
-│   ├── routes.py         # Endpoints da API (Controllers)
-│   ├── services.py       # Lógica de Negócios
-│   ├── auth.py           # Autenticação de Usuário
-│   ├── utils.py          # Funções auxiliares
-│   ├── templates/        # HTML (Jinja2)
-│   ├── static/           # Arquivos estáticos (CSS, JS)
-├── migrations/           # Arquivos de migração do banco de dados
-├── data/                 # Dados CSV da ANAC
-│   ├── Dados_Estatisticos.csv
-├── config.py             # Configuração da aplicação
-├── requirements.txt      # Dependências do projeto
-├── Dockerfile            # Configuração para containerização
-├── docker-compose.yml    # Configuração do Docker Compose
-├── run.py                # Arquivo principal para rodar o servidor Flask
-└── README.md             # Documentação do projeto
-```
-
----
-
 ## 🛠️ Tecnologias Utilizadas
 
-- **Back-End:** Flask, SQLAlchemy, Pandas  
-- **Banco de Dados:** PostgreSQL  
-- **Autenticação:** Flask-Login  
-- **Gráficos:** Chart.js (ou Matplotlib, Plotly)  
+- **Back-End:** Flask, Flask-SQLAlchemy, Pandas  
+- **Banco de Dados & Migração:** Sqlite, Alembic, Flask-Migrate
+- **Requisições & APIs:** Flask-Login, Requests, Urllib3 
+- **Visualização & Dashboards:**  Plotly, Dash 
+- **Manipulação de Dados & Performance:**  NumPy, Python-Dateutil, Pytz / Tzdata
 - **Containerização:** Docker, Docker Compose  
 
 ---
@@ -57,7 +30,7 @@ A aplicação segue uma arquitetura **em camadas**, separando responsabilidades:
 
 ### 🔹 1. Clonar o Repositório
 ```sh
-git clone https://github.com/seu-usuario/anac-flight-dashboard.git
+git clone https://github.com/Chyod-s/anac-flight-dashboard.git
 cd anac-flight-dashboard
 ```
 
@@ -74,25 +47,28 @@ pip install -r requirements.txt
 ```
 
 ### 🔹 4. Configurar o Banco de Dados
-1. Criar um banco de dados no PostgreSQL  
-2. Definir a string de conexão no **config.py**  
-3. Rodar as migrações:
+1. Rodar os comandos:
 ```sh
-flask db upgrade
+-flask run-migrations: Roda as migrações do banco de dados.
+-flask inserir-dados-csv: Insere os dados do CSV no banco de dados.
 ```
 
 ### 🔹 5. Executar a Aplicação
 ```sh
 python run.py
 ```
-Acesse no navegador: **http://127.0.0.1:5000**
+Acesse no navegador: **http://127.0.0.1:5500**
 
 ---
 
 ## 📦 Rodando com Docker
+1. Rode os CMD
 
 ```sh
-docker-compose up --build
+docker build -t flask-app .
+
+docker run -p 5000:5000 flask-app:latest
+
 ```
 Acesse no navegador: **http://localhost:5000**
 
