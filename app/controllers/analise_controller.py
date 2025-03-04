@@ -1,3 +1,4 @@
+""" Módulo com as rotas da aplicação para a análise de voos. """
 from flask import render_template, request
 from flask_login import login_required
 import pandas as pd
@@ -9,11 +10,18 @@ def analise_controller(app):
     def gerar_grafico(voos):
         """Função auxiliar para gerar o gráfico a partir dos voos."""
         if voos:
-            df = pd.DataFrame([(v.ano, v.mes, v.mercado, v.rpk) for v in voos], columns=['ano', 'mes', 'mercado', 'rpk'])
+            df = pd.DataFrame(
+                [(v.ano,v.mes,v.mercado,v.rpk) for v in voos],
+                columns=['ano', 'mes', 'mercado', 'rpk'])
 
             if request.method == 'GET':
                 df = df.groupby('mes', as_index=False)['rpk'].sum()
-                fig = px.bar(df, x='mes', y='rpk', title='RPK por Mês', color='mes', color_continuous_scale=['#FFB380', '#FF7020'])
+                fig = px.bar(df,
+                             x='mes',
+                             y='rpk',
+                             title='RPK por Mês',
+                             color='mes',
+                             color_continuous_scale=['#FFB380', '#FF7020'])
                 fig.update_layout(
                     legend=dict(x=0.5, y=-0.2, xanchor='center', yanchor='top'),
                     width=600,

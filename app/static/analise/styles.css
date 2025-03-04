@@ -33,14 +33,14 @@ html, body {
 button {
     margin-top: 1rem; /* Adiciona espaçamento abaixo do form */
     padding: 0.5rem 1rem;
-    background-color: #4CAF50;
+    background-color: #FF7020;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #2B2B2B;
 }
 
 .section1 {
