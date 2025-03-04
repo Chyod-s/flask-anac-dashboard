@@ -29,6 +29,13 @@
         padding-top: .2857142857rem;
         padding-bottom: .2857142857rem;
         height: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .logo p {
+        margin: 0; 
     }
 
     .menu {
