@@ -1,20 +1,24 @@
-# Etapa 1: Definindo a imagem base
+# Usando a imagem base do Python
 FROM python:3.10-slim AS base
 
-# Definindo o diretório de trabalho dentro do container
+# Definir diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copiar o arquivo de dependências (requirements.txt) para o container
+# Copiar o arquivo de dependências para o container
 COPY requirements.txt .
 
 # Instalar as dependências do projeto
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar o restante do código para o container
+# Copiar o código da aplicação para dentro do container
 COPY . .
 
-# Expor a porta 5000 para o Flask (padrão)
+# Expor a porta em que o Flask estará rodando (padrão: 5000)
 EXPOSE 5000
 
-# Definir o comando para rodar o aplicativo Flask
+# Definir a variável de ambiente para o Flask
+ENV FLASK_APP=run.py
+ENV FLASK_ENV=production
+
+# Rodar a aplicação Flask
 CMD ["flask", "run", "--host=0.0.0.0"]
