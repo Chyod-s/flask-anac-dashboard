@@ -1,8 +1,20 @@
-FROM python:3-alpine3.20
+# Etapa 1: Definindo a imagem base
+FROM python:3.10-slim AS base
 
-WORKDIR /api-flask
+# Definindo o diretório de trabalho dentro do container
+WORKDIR /app
 
-# copiar arquivos nescessarios
-COPY . /api-flask
+# Copiar o arquivo de dependências (requirements.txt) para o container
+COPY requirements.txt .
 
-RUN pip3 install - upgrade pip && pip install --no-cache-dir - r requirements.txt
+# Instalar as dependências do projeto
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiar o restante do código para o container
+COPY . .
+
+# Expor a porta 5000 para o Flask (padrão)
+EXPOSE 5000
+
+# Definir o comando para rodar o aplicativo Flask
+CMD ["flask", "run", "--host=0.0.0.0"]

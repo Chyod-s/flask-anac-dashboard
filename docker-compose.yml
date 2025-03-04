@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: flask-app
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=flask_db
+    volumes:
+      - .:/app
+    command: bash -c "python manage.py db upgrade && flask run --host=0.0.0.0"
+    networks:
+      - flask-network
+
+networks:
+  flask-network:
+    driver: bridge
