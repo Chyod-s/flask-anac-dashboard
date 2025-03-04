@@ -6,6 +6,8 @@ from app.controllers import register_routes
 from app.extensions import Config, db, migrate
 
 KEY = os.getenv('SECRET_KEY')
+if not KEY:
+    KEY = 'T&st3-T0k3n'
 
 def create_app():
     """ Cria a aplicação Flask """

@@ -2,7 +2,7 @@
 FROM python:3.10-slim AS base
 
 # Definir diretório de trabalho dentro do container
-WORKDIR /app
+WORKDIR /app-flask
 
 # Copiar o arquivo de dependências para o container
 COPY requirements.txt .
