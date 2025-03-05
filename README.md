@@ -3,6 +3,15 @@
 Este projeto é uma aplicação web desenvolvida com **Python (Flask)** para análise de dados públicos da **ANAC** (Agência Nacional de Aviação Civil).  
 A aplicação permite visualizar informações de voos regulares da companhia aérea **GOL**, com filtros personalizados e gráficos interativos.
 
+---
+## 🔹 Preview - video
+
+<br>
+<div style="display: inline_block">
+  <a href="https://www.youtube.com/watch?v=XXX2ErZkyJY">
+    <img height="250" src="https://drive.google.com/uc?id=1Z-elydGDMC-LEcyf61BbWIDJHjH5jL1A"/>
+  </a>
+</div>
 
 ---
 ## 🔹 Deploy da aplicação
