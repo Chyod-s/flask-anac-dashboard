@@ -73,11 +73,22 @@ Acesse no navegador: **http://127.0.0.1:5500**
 docker build -t flask-app .
 
 docker run -p 5000:5000 flask-app:latest
+```
+
+2. Restaurar img docker
+
+```sh
+docker load -i minha_imagem.tar
+
+```
 
 ```
 Acesse no navegador: **http://localhost:5000**
+```
 
 ---
+
+
 
 ## 📊 Sobre os Dados da ANAC
 
