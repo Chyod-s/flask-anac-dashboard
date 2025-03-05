@@ -8,7 +8,7 @@ A aplicação permite visualizar informações de voos regulares da companhia a�
 
 <br>
 <div style="display: inline_block">
-  <a href="https://www.youtube.com/watch?v=XXX2ErZkyJY">
+  <a href="https://www.youtube.com/watch?v=XXX2ErZkyJY" target="_blank">
     <img height="250" src="https://drive.google.com/uc?id=1Z-elydGDMC-LEcyf61BbWIDJHjH5jL1A"/>
   </a>
 </div>
