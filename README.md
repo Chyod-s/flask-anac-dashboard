@@ -4,7 +4,12 @@ Este projeto é uma aplicação web desenvolvida com **Python (Flask)** para an�
 A aplicação permite visualizar informações de voos regulares da companhia aérea **GOL**, com filtros personalizados e gráficos interativos.
 
 ---
+## 🔹 link da api funcionando
 
+```sh
+https://flask-anac-dashboard-5177157fcd1d.herokuapp.com/
+```
+---
 ## 🚀 Funcionalidades
 
 ✔ **Autenticação de Usuário** (Login)  
