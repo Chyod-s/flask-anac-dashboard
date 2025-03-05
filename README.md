@@ -3,8 +3,14 @@
 Este projeto é uma aplicação web desenvolvida com **Python (Flask)** para análise de dados públicos da **ANAC** (Agência Nacional de Aviação Civil).  
 A aplicação permite visualizar informações de voos regulares da companhia aérea **GOL**, com filtros personalizados e gráficos interativos.
 
----
 
+---
+## 🔹 Deploy da aplicação
+
+```sh
+https://flask-anac-dashboard-5177157fcd1d.herokuapp.com/
+```
+---
 ## 🚀 Funcionalidades
 
 ✔ **Autenticação de Usuário** (Login)  
@@ -68,11 +74,31 @@ Acesse no navegador: **http://127.0.0.1:5500**
 docker build -t flask-app .
 
 docker run -p 5000:5000 flask-app:latest
+```
+
+### Restaurar img docker
+1. Despois que desconpactar a img do docker  na pasta
+
+```sh
+docker load -i minha_imagem.tar
+
+```
+
+---
+## 🔹 Back-up img docker
+
+```sh
+https://drive.google.com/drive/folders/1N8xRSjX58b7jFLZ5jTg-FJSfaMNLsNLZ?usp=sharing
+```
+---
 
 ```
 Acesse no navegador: **http://localhost:5000**
+```
 
 ---
+
+
 
 ## 📊 Sobre os Dados da ANAC
 
